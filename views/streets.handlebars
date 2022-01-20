@@ -1,14 +1,81 @@
-<h2>Streets</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<table>
-{{#each streets}}
-<tr>
-	<td>
-		{{name}}
-	</td>
-	<td>
-		<a href="/meters/{{id}}">Meters in street</a>
-	</td>
-</tr>
-{{/each}}
-</table>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+
+	<div class="container">
+		<form action="/streets" method="GET">
+
+			<div class="row">
+				<div class="col-3">
+					<h2>Streets</h2>
+				</div>
+				<div class="col-3">
+					<!-- This content will take up 3/12 (or 1/4) of the container -->
+				</div>
+				<div class="col-6">
+
+					<table>
+						{{#each show}}
+						<tr>
+							<td>
+								{{name}}
+							</td>
+							<td>
+								<a href="/meters/{{id}}">Meters in street</a>
+							</td>
+						</tr>
+						{{/each}}
+					</table>
+				</div>
+			</div>
+
+		</form><br>
+
+		<br>
+
+		<form action="/appliance" method="GET">
+
+			<div class="row">
+				<div class="col-3">
+					<a><button class="button-primary btn" type="submit" value="show" name="show">Click here to see the
+							all the appliances used by households</button></a><br>
+				</div>
+				<div class="col-3">
+					{{#each appliance}}
+
+					<li>{{name}}</li>
+
+					{{/each}}
+				</div>
+				<div class="col-6">
+
+				</div>
+			</div>
+
+
+		</form>
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+</body>
+
+</html>

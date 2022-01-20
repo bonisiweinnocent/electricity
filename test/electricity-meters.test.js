@@ -16,6 +16,7 @@ describe("The Electricity meter", function() {
 
 	this.beforeAll(function() {
 		pool.query(`update electricity_meter set balance = 50`);
+		
 	});
 
 	it("should see all the streets", async function() {
@@ -63,6 +64,8 @@ describe("The Electricity meter", function() {
 		const electricityMeters = ElectricityMeters(pool);
 		const highest = await electricityMeters.highestBalanceMeter();
 		
+
+		 console.log(JSON.stringify(highest) +"ooooooooooo");
 		assert.deepStrictEqual([{"balance": "50.00", "street_id": 1,"street_number": "8"}], highest);
 
 	});

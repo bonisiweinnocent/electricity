@@ -38,6 +38,8 @@ insert into electricity_meter (street_number, street_id, balance) values (11, 3,
 insert into electricity_meter (street_number, street_id, balance) values (6, 3, 50);
 insert into electricity_meter (street_number, street_id, balance) values (13, 3, 50);
 
+
+
 insert into appliance (name, rate) values ('Stove', 4.5);
 insert into appliance (name, rate) values ('TV', 1.8);
 insert into appliance (name, rate) values ('Heater', 3.5);
