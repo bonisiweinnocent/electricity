@@ -19,7 +19,6 @@ create table electricity_meter (
 	street_number text,
 	street_id int,
 	balance decimal(8,2),
-	meter_number text,
 	foreign key (street_id) references street(id)
  
 );

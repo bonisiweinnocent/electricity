@@ -38,12 +38,12 @@ module.exports = function electricityMeters(pool) {
 
 	}
 	async function lowestBalanceMeter() {
-		let lowestBalance = await pool.query('select meter_number,balance,street_number,name from electricity_meter join street on street.id = electricity_meter.street_id order by  balance desc limit 1')
+		let lowestBalance = await pool.query('select street_number, street_id, balance from electricity_meter join street on street.id = electricity_meter.street_id order by  balance desc limit 1')
 		return lowestBalance.rows
 	}
 
 	async function highestBalanceMeter() {
-		let highestBalance = await pool.query('select meter_number,balance,street_number,name from electricity_meter join street on street.id = electricity_meter.street_id order by  balance asc limit 1')
+		let highestBalance = await pool.query('select street_number, street_id, balance from electricity_meter join street on street.id = electricity_meter.street_id order by  balance asc limit 1')
 		return highestBalance.rows
 
 	}

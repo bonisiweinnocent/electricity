@@ -55,15 +55,15 @@ describe("The Electricity meter", function() {
 		const electricityMeters = ElectricityMeters(pool);
 		const lowest = await electricityMeters.lowestBalanceMeter();
 		
-		assert.deepStrictEqual([{"balance": "50.00","meter_number": [null],"name": "Miller Street","street_number": "8"}], lowest);
+		assert.deepStrictEqual([{"balance": "50.00","street_id": 1,"street_number": "8"}], lowest);
 
 	});
-	it("should show the highets  balance meter", async function() {
+	it("should show the highest  balance meter", async function() {
 
 		const electricityMeters = ElectricityMeters(pool);
 		const highest = await electricityMeters.highestBalanceMeter();
 		
-		assert.deepStrictEqual([{"balance": "50.00","meter_number": [null],"name": "Miller Street","street_number": "8"}], highest);
+		assert.deepStrictEqual([{"balance": "50.00", "street_id": 1,"street_number": "8"}], highest);
 
 	});
 
